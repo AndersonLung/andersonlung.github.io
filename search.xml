@@ -1,28 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>内存管管理 —— slab分配器</title>
-    <url>/2021/10/07/%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86-%E2%80%94%E2%80%94-slab%E7%AE%97%E6%B3%95/</url>
-    <content><![CDATA[<meta name="referrer" content="no-referrer">
-
-<h3 id="为什么需要slab分配器"><a href="#为什么需要slab分配器" class="headerlink" title="为什么需要slab分配器"></a>为什么需要slab分配器</h3><p>   应用程序申请内存是随意的，不会完全按照2的幂次来申请，因此造成的内存浪费无可避免，使用slab分配器来改善这种现象。slab分配器预先从内存中分配一定数量的内存区块，模块申请内存直接从slab预申请的内存中获取</p>
-<h3 id="使用条件"><a href="#使用条件" class="headerlink" title="使用条件"></a>使用条件</h3><ul>
-<li>子系统频繁申请和释放内存时，slab分配才能发挥作用</li>
-<li>利用slab申请的内存大小是固定的，只有固定的内存才能实现内存的高速申请和释放</li>
-</ul>
-<hr>
-<p> 参考文献：<br> <a href="https://kernel.blog.csdn.net/article/details/52705552?utm_medium=distribute.pc_relevant.none-task-blog-2~default~CTRLIST~default-4.no_search_link&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2~default~CTRLIST~default-4.no_search_link">slab分配器–Linux内存管理(二十二)</a></p>
-]]></content>
-      <categories>
-        <category>Linux 内核</category>
-        <category>内存管理</category>
-      </categories>
-      <tags>
-        <tag>内存管理</tag>
-        <tag>slab</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>内存管理 —— 伙伴算法</title>
     <url>/2021/10/07/%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86-%E2%80%94%E2%80%94-%E4%BC%99%E4%BC%B4%E7%AE%97%E6%B3%95/</url>
     <content><![CDATA[<meta name="referrer" content="no-referrer"/>
@@ -51,6 +29,28 @@
       <tags>
         <tag>内存管理</tag>
         <tag>伙伴算法</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>内存管管理 —— slab分配器</title>
+    <url>/2021/10/07/%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86-%E2%80%94%E2%80%94-slab%E7%AE%97%E6%B3%95/</url>
+    <content><![CDATA[<meta name="referrer" content="no-referrer">
+
+<h3 id="为什么需要slab分配器"><a href="#为什么需要slab分配器" class="headerlink" title="为什么需要slab分配器"></a>为什么需要slab分配器</h3><p>   应用程序申请内存是随意的，不会完全按照2的幂次来申请，因此造成的内存浪费无可避免，使用slab分配器来改善这种现象。slab分配器预先从内存中分配一定数量的内存区块，模块申请内存直接从slab预申请的内存中获取</p>
+<h3 id="使用条件"><a href="#使用条件" class="headerlink" title="使用条件"></a>使用条件</h3><ul>
+<li>子系统频繁申请和释放内存时，slab分配才能发挥作用</li>
+<li>利用slab申请的内存大小是固定的，只有固定的内存才能实现内存的高速申请和释放</li>
+</ul>
+<hr>
+<p> 参考文献：<br> <a href="https://kernel.blog.csdn.net/article/details/52705552?utm_medium=distribute.pc_relevant.none-task-blog-2~default~CTRLIST~default-4.no_search_link&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2~default~CTRLIST~default-4.no_search_link">slab分配器–Linux内存管理(二十二)</a></p>
+]]></content>
+      <categories>
+        <category>Linux 内核</category>
+        <category>内存管理</category>
+      </categories>
+      <tags>
+        <tag>内存管理</tag>
+        <tag>slab</tag>
       </tags>
   </entry>
 </search>
