@@ -1,37 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>内存管理 —— 伙伴算法</title>
-    <url>/2021/10/07/%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86-%E2%80%94%E2%80%94-%E4%BC%99%E4%BC%B4%E7%AE%97%E6%B3%95/</url>
-    <content><![CDATA[<meta name="referrer" content="no-referrer"/>
-
-<h2 id="为什么需要伙伴算法"><a href="#为什么需要伙伴算法" class="headerlink" title="为什么需要伙伴算法"></a>为什么需要伙伴算法</h2><p>   本质上是减少内存的碎片化</p>
-<h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2><ul>
-<li>伙伴算法把内存的页框分为11组链表，分别是2的0次幂到10次幂。可以在 <strong>&lt;mmzone.h&gt;</strong> 文件中查看相关定义</li>
-<li>不同大小的内存区块是不会再同一个链表<br>如图显示 按照伙伴算法将1M内存划分成<img src="https://img-blog.csdn.net/20140614202745343" width="75%" height="75%"></li>
-</ul>
-<h3 id="查找"><a href="#查找" class="headerlink" title="查找"></a>查找</h3><p>   查找时候，先确定需要的内存大小的最小区块</p>
-<ul>
-<li>如果在区块链表找到 则分配给应用程序</li>
-<li>如果没有找到则向上获取，裂开，一部分分给应用程序，另一部分给下一级的链表作为空闲区块 <h3 id="释放"><a href="#释放" class="headerlink" title="释放"></a>释放</h3>释放，操作系统将会内存收回，附近如果有同样带下未使用的区块，则合并<br>无论释放或者申请，算法都会检查当前链表是否空闲<h2 id="优缺点"><a href="#优缺点" class="headerlink" title="优缺点"></a>优缺点</h2><h3 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h3></li>
-<li>解决外部碎片</li>
-<li>针对大内存分配<h3 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h3></li>
-<li>合并要求过于严苛</li>
-<li>申请内存大小造成浪费 </li>
-</ul>
-<hr>
-<p> 参考文献：<br> <a href="https://blog.csdn.net/gatieme/article/details/52420444">伙伴算法</a><br> <a href="https://blog.csdn.net/u013009575/article/details/17751147">伙伴算法</a></p>
-]]></content>
-      <categories>
-        <category>Linux 内核</category>
-        <category>内存管理</category>
-      </categories>
-      <tags>
-        <tag>内存管理</tag>
-        <tag>伙伴算法</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>内存管管理 —— slab分配器</title>
     <url>/2021/10/07/%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86-%E2%80%94%E2%80%94-slab%E7%AE%97%E6%B3%95/</url>
     <content><![CDATA[<meta name="referrer" content="no-referrer">
@@ -60,6 +29,37 @@ slab描述符是一个数据结构。主要存放在两个地方</li>
       <tags>
         <tag>内存管理</tag>
         <tag>slab</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>内存管理 —— 伙伴算法</title>
+    <url>/2021/10/07/%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86-%E2%80%94%E2%80%94-%E4%BC%99%E4%BC%B4%E7%AE%97%E6%B3%95/</url>
+    <content><![CDATA[<meta name="referrer" content="no-referrer"/>
+
+<h2 id="为什么需要伙伴算法"><a href="#为什么需要伙伴算法" class="headerlink" title="为什么需要伙伴算法"></a>为什么需要伙伴算法</h2><p>   本质上是减少内存的碎片化</p>
+<h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2><ul>
+<li>伙伴算法把内存的页框分为11组链表，分别是2的0次幂到10次幂。可以在 <strong>&lt;mmzone.h&gt;</strong> 文件中查看相关定义</li>
+<li>不同大小的内存区块是不会再同一个链表<br>如图显示 按照伙伴算法将1M内存划分成<img src="https://img-blog.csdn.net/20140614202745343" width="75%" height="75%"></li>
+</ul>
+<h3 id="查找"><a href="#查找" class="headerlink" title="查找"></a>查找</h3><p>   查找时候，先确定需要的内存大小的最小区块</p>
+<ul>
+<li>如果在区块链表找到 则分配给应用程序</li>
+<li>如果没有找到则向上获取，裂开，一部分分给应用程序，另一部分给下一级的链表作为空闲区块 <h3 id="释放"><a href="#释放" class="headerlink" title="释放"></a>释放</h3>释放，操作系统将会内存收回，附近如果有同样带下未使用的区块，则合并<br>无论释放或者申请，算法都会检查当前链表是否空闲<h2 id="优缺点"><a href="#优缺点" class="headerlink" title="优缺点"></a>优缺点</h2><h3 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h3></li>
+<li>解决外部碎片</li>
+<li>针对大内存分配<h3 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h3></li>
+<li>合并要求过于严苛</li>
+<li>申请内存大小造成浪费 </li>
+</ul>
+<hr>
+<p> 参考文献：<br> <a href="https://blog.csdn.net/gatieme/article/details/52420444">伙伴算法</a><br> <a href="https://blog.csdn.net/u013009575/article/details/17751147">伙伴算法</a></p>
+]]></content>
+      <categories>
+        <category>Linux 内核</category>
+        <category>内存管理</category>
+      </categories>
+      <tags>
+        <tag>内存管理</tag>
+        <tag>伙伴算法</tag>
       </tags>
   </entry>
 </search>
