@@ -204,7 +204,7 @@
       <span class="post-meta-item-text">发表于</span>
       
 
-      <time title="创建时间：2021-10-09 11:00:05 / 修改时间：15:45:07" itemprop="dateCreated datePublished" datetime="2021-10-09T11:00:05+08:00">2021-10-09</time>
+      <time title="创建时间：2021-10-09 11:00:05 / 修改时间：15:55:24" itemprop="dateCreated datePublished" datetime="2021-10-09T11:00:05+08:00">2021-10-09</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -223,7 +223,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>140</span>
+      <span>193</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
@@ -244,6 +244,9 @@
           <meta name="referrer" content="no-referrer"/>
 
 <h2 id="进程调度"><a href="#进程调度" class="headerlink" title="进程调度"></a>进程调度</h2><p>  进程的目的是为了分配资源，内核将应用任务存放在双向链表任务列表中。链表的item 是task_struct(进程描述符)。进程描述符比较大，在32位的机器，该数据结构表示 打开的文件、进程的地址空间，进程的状态、挂起的信号和其他信息</p>
+<ul>
+<li>分配进程描述符。Linux 通过slab分配器分配task_truct 结构，达到复用角色和和缓存着色的目的。</li>
+</ul>
 <hr>
 <p> 参考文献：<br> <a href="">Linux内核设计与实现(第三版)</a></p>
 
