@@ -204,7 +204,7 @@
       <span class="post-meta-item-text">发表于</span>
       
 
-      <time title="创建时间：2021-10-09 11:00:05 / 修改时间：15:55:24" itemprop="dateCreated datePublished" datetime="2021-10-09T11:00:05+08:00">2021-10-09</time>
+      <time title="创建时间：2021-10-09 11:00:05 / 修改时间：17:01:33" itemprop="dateCreated datePublished" datetime="2021-10-09T11:00:05+08:00">2021-10-09</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -223,7 +223,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>193</span>
+      <span>510</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
@@ -244,9 +244,8 @@
           <meta name="referrer" content="no-referrer"/>
 
 <h2 id="进程调度"><a href="#进程调度" class="headerlink" title="进程调度"></a>进程调度</h2><p>  进程的目的是为了分配资源，内核将应用任务存放在双向链表任务列表中。链表的item 是task_struct(进程描述符)。进程描述符比较大，在32位的机器，该数据结构表示 打开的文件、进程的地址空间，进程的状态、挂起的信号和其他信息</p>
-<ul>
-<li>分配进程描述符。Linux 通过slab分配器分配task_truct 结构，达到复用角色和和缓存着色的目的。</li>
-</ul>
+<h3 id="分配进程描述符"><a href="#分配进程描述符" class="headerlink" title="分配进程描述符"></a>分配进程描述符</h3><p>  Linux 通过slab分配器分配task_truct 结构，达到复用角色和和缓存着色的目的。当程序需要一个结构实例时，只需要从空闲链表中获取一个空闲的，然后将数据存放占用该区块的内存空间。使用完后释放内存，将链表结构放回到空闲链表。使用slab分配器动态生成task_struct 结构，只需要在栈底(向上增长)或 栈顶(向上增长)的位置创建一个新的结构 struct_thread_info</p>
+<h3 id="进程创建"><a href="#进程创建" class="headerlink" title="进程创建"></a>进程创建</h3><p>  内核通过唯一的标识符PID来标识每个进程，是pid_t类型，也就是int类型，PID的最大值是32768，内存会把PID存入各自进程的进程描述符的结构中<br>  进程在新的内存地址空间创建新进程，读入可执行程序，读入可执行程序可以分解成fork和exec两个函数，在内核中都用相对应的进程函数来完成该功能。fork通过拷贝当前进程来创建一个进程</p>
 <hr>
 <p> 参考文献：<br> <a href="">Linux内核设计与实现(第三版)</a></p>
 
@@ -603,7 +602,7 @@
       <i class="fa fa-chart-line"></i>
     </span>
       <span>站点总字数：</span>
-    <span title="站点总字数">1k</span>
+    <span title="站点总字数">2k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
