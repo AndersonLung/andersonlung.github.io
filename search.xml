@@ -88,6 +88,7 @@
 <h2 id="进程调度"><a href="#进程调度" class="headerlink" title="进程调度"></a>进程调度</h2><p>  进程的目的是为了分配资源，内核将应用任务存放在双向链表任务列表中。链表的item 是task_struct(进程描述符)。进程描述符比较大，在32位的机器，该数据结构表示 打开的文件、进程的地址空间，进程的状态、挂起的信号和其他信息</p>
 <h3 id="分配进程描述符"><a href="#分配进程描述符" class="headerlink" title="分配进程描述符"></a>分配进程描述符</h3><p>  Linux 通过slab分配器分配task_truct 结构，达到复用角色和和缓存着色的目的。当程序需要一个结构实例时，只需要从空闲链表中获取一个空闲的，然后将数据存放占用该区块的内存空间。使用完后释放内存，将链表结构放回到空闲链表。使用slab分配器动态生成task_struct 结构，只需要在栈底(向上增长)或 栈顶(向上增长)的位置创建一个新的结构 struct_thread_info</p>
 <h3 id="进程创建"><a href="#进程创建" class="headerlink" title="进程创建"></a>进程创建</h3><p>  内核通过唯一的标识符PID来标识每个进程，是pid_t类型，也就是int类型，PID的最大值是32768，内存会把PID存入各自进程的进程描述符的结构中<br>  进程在新的内存地址空间创建新进程，读入可执行程序，读入可执行程序可以分解成fork和exec两个函数，在内核中都用相对应的进程函数来完成该功能。fork通过拷贝当前进程来创建一个进程</p>
+<h3 id="写时拷贝"><a href="#写时拷贝" class="headerlink" title="写时拷贝"></a>写时拷贝</h3><p>  内核通过写时拷贝页来实现将资源复制给新线程，只有在需要写入时候，才能将相应的资源复制给新线程。推迟拷贝的动作发生时间。</p>
 <hr>
 <p> 参考文献：<br> <a href="">Linux内核设计与实现(第三版)</a></p>
 ]]></content>
@@ -97,6 +98,22 @@
       <tags>
         <tag>进程管理</tag>
         <tag>进程调度</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>qt 跨平台生成dump文件</title>
+    <url>/2021/10/20/qt-%E8%B7%A8%E5%B9%B3%E5%8F%B0%E7%94%9F%E6%88%90dump%E6%96%87%E4%BB%B6/</url>
+    <content><![CDATA[<meta name="referrer" content="no-referrer">
+
+<h3 id="dump文件重要性"><a href="#dump文件重要性" class="headerlink" title="dump文件重要性"></a>dump文件重要性</h3><h3 id="WIN-的DUMP-文件生成"><a href="#WIN-的DUMP-文件生成" class="headerlink" title="WIN 的DUMP 文件生成"></a>WIN 的DUMP 文件生成</h3><h3 id="Linux-的DUMP-文件生成"><a href="#Linux-的DUMP-文件生成" class="headerlink" title="Linux 的DUMP 文件生成"></a>Linux 的DUMP 文件生成</h3><h4 id="Breakpad"><a href="#Breakpad" class="headerlink" title="Breakpad"></a>Breakpad</h4><p> Breakpad是google 提供的一个开源跨平台奔溃处理框架，内含转储、上报、分析<br> 官方文档介绍：<a href="http://code.google.com/p/google-breakpad/wiki/GettingStartedWithBreakpad">http://code.google.com/p/google-breakpad/wiki/GettingStartedWithBreakpad</a><br> <img src="https://img-my.csdn.net/uploads/201212/13/1355385918_4040.png" width="75%" height="75%"></p>
+]]></content>
+      <categories>
+        <category>QT</category>
+        <category>C++</category>
+      </categories>
+      <tags>
+        <tag>DUMP</tag>
+        <tag>Breakpad</tag>
       </tags>
   </entry>
 </search>
