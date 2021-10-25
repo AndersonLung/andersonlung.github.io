@@ -156,7 +156,10 @@
 <td>不可见</td>
 </tr>
 </tbody></table>
-<h4 id="封装"><a href="#封装" class="headerlink" title="封装"></a>封装</h4><h4 id="多态"><a href="#多态" class="headerlink" title="多态"></a>多态</h4><h3 id="虚函数和虚函数表"><a href="#虚函数和虚函数表" class="headerlink" title="虚函数和虚函数表"></a>虚函数和虚函数表</h3>]]></content>
+<h4 id="封装"><a href="#封装" class="headerlink" title="封装"></a>封装</h4><p>主要体现在使用类和对象来进行数据封装</p>
+<h4 id="多态"><a href="#多态" class="headerlink" title="多态"></a>多态</h4><p>静态多态：编译期确定，使用函数重载来实现<br>动态多态：运行时确定，使用虚函数来实现</p>
+<h4 id="虚函数"><a href="#虚函数" class="headerlink" title="虚函数"></a>虚函数</h4><p>  virtual 声明该函数</p>
+]]></content>
       <categories>
         <category>C++</category>
       </categories>
