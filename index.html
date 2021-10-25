@@ -204,7 +204,7 @@
       <span class="post-meta-item-text">发表于</span>
       
 
-      <time title="创建时间：2021-10-25 15:02:11 / 修改时间：17:03:15" itemprop="dateCreated datePublished" datetime="2021-10-25T15:02:11+08:00">2021-10-25</time>
+      <time title="创建时间：2021-10-25 15:02:11 / 修改时间：17:03:52" itemprop="dateCreated datePublished" datetime="2021-10-25T15:02:11+08:00">2021-10-25</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -249,7 +249,7 @@
 <h3 id="析构"><a href="#析构" class="headerlink" title="析构"></a>析构</h3><p>  析构主要处理额外释放一些资源</p>
 <h3 id="c-内存布局"><a href="#c-内存布局" class="headerlink" title="c++ 内存布局"></a>c++ 内存布局</h3><p>  c++ 内存布局主要分为  堆、栈、自由存储区、全局/静态区、常量存储区<br>  堆：由用户控制，使用malloc的申请的分配内存空间，操作系统维护的特殊内存空间<br>  栈：由系统控制，申请必要的局部内存单元，处理器的指令集<br>  自由存储区：用于new 申请的内存分配空间<br>  全局/静态区：程序编译时产生的变量，在程序生命周期都存在的变量<br>  常量存储区：特殊存储区，存储常量，不允许更改</p>
 <h3 id="关键字-static-const"><a href="#关键字-static-const" class="headerlink" title="关键字 static  const"></a>关键字 static  const</h3><p>  const 表示对象和变量是常量，初始化必须赋值，不能修改值<br>  const 变量是文件的局部变量，其他文件访问必须指定为extern<br>  在《Effective C++》中条款2和条款3 使用const 代替#define 主要原因是指定类型和尽量使用const<br>  static 表示作用范围是改函数体 ，不同于其他的变量，static 在内存中只有一份，不需要多次分配。但是仍然具有文件使用区域的限制</p>
-<h4 id="C-里的静态成员函数不能用const、volatile的原因"><a href="#C-里的静态成员函数不能用const、volatile的原因" class="headerlink" title="C++里的静态成员函数不能用const、volatile的原因"></a>C++里的静态成员函数不能用const、volatile的原因</h4><p>static成员不是任何对象的组成部分，所以static成员函数不能被声明为const，毕竟，将成员函数声明为const就是承诺不会修改该函数所属的对象。最后，static成员函数也<br>不能被声明为虚函数。</p>
+<h4 id="C-里的静态成员函数不能用const、volatile的原因"><a href="#C-里的静态成员函数不能用const、volatile的原因" class="headerlink" title="C++里的静态成员函数不能用const、volatile的原因"></a>C++里的静态成员函数不能用const、volatile的原因</h4><p>  static成员不是任何对象的组成部分，所以static成员函数不能被声明为const，毕竟，将成员函数声明为const就是承诺不会修改该函数所属的对象。最后，static成员函数也<br>不能被声明为虚函数。</p>
 <h3 id="虚函数和虚函数表"><a href="#虚函数和虚函数表" class="headerlink" title="虚函数和虚函数表"></a>虚函数和虚函数表</h3>
       
     </div>
