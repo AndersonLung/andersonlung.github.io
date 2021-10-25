@@ -20,31 +20,28 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"andersonlung.github.io","root":"/","images":"/images","scheme":"Mist","darkmode":false,"version":"8.8.0","exturl":false,"sidebar":{"position":"left","padding":18,"offset":12,"display":"always"},"copycode":"ture","bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
-<meta name="description" content="dump文件重要性WIN 的DUMP 文件生成Linux 的DUMP 文件生成Breakpad Breakpad是google 提供的一个开源跨平台奔溃处理框架，内含转储、上报、分析 官方文档介绍：http:&#x2F;&#x2F;code.google.com&#x2F;p&#x2F;google-breakpad&#x2F;wiki&#x2F;GettingStartedWithBreakpad">
+<meta name="description" content="本界面主要记录C++ 的一些基础知识和实操构造  构造函数分为默认无参构造，有参构造 拷贝构造 移动构造  以Student为例  默认无参为： Student();  一般构造为 ： Student(const String &amp;name);  一般构造函数带默认参数 ： Student(const String &amp;name,const nation &#x3D; &quot;zh&amp;qu">
 <meta property="og:type" content="article">
-<meta property="og:title" content="qt 跨平台生成dump文件">
-<meta property="og:url" content="https://andersonlung.github.io/2021/10/20/qt-%E8%B7%A8%E5%B9%B3%E5%8F%B0%E7%94%9F%E6%88%90dump%E6%96%87%E4%BB%B6/index.html">
+<meta property="og:title" content="C++基础">
+<meta property="og:url" content="https://andersonlung.github.io/2021/10/25/C-%E5%9F%BA%E7%A1%80/index.html">
 <meta property="og:site_name" content="松香小站">
-<meta property="og:description" content="dump文件重要性WIN 的DUMP 文件生成Linux 的DUMP 文件生成Breakpad Breakpad是google 提供的一个开源跨平台奔溃处理框架，内含转储、上报、分析 官方文档介绍：http:&#x2F;&#x2F;code.google.com&#x2F;p&#x2F;google-breakpad&#x2F;wiki&#x2F;GettingStartedWithBreakpad">
+<meta property="og:description" content="本界面主要记录C++ 的一些基础知识和实操构造  构造函数分为默认无参构造，有参构造 拷贝构造 移动构造  以Student为例  默认无参为： Student();  一般构造为 ： Student(const String &amp;name);  一般构造函数带默认参数 ： Student(const String &amp;name,const nation &#x3D; &quot;zh&amp;qu">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20210402142301295.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTQ1OTcxOTg=,size_16,color_FFFFFF,t_70">
-<meta property="article:published_time" content="2021-10-20T02:44:59.000Z">
-<meta property="article:modified_time" content="2021-10-20T06:11:57.192Z">
+<meta property="article:published_time" content="2021-10-25T07:02:11.000Z">
+<meta property="article:modified_time" content="2021-10-25T08:52:38.452Z">
 <meta property="article:author" content="ANDERSON">
-<meta property="article:tag" content="DUMP">
-<meta property="article:tag" content="Breakpad">
+<meta property="article:tag" content="C++">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://img-blog.csdnimg.cn/20210402142301295.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTQ1OTcxOTg=,size_16,color_FFFFFF,t_70">
 
 
-<link rel="canonical" href="https://andersonlung.github.io/2021/10/20/qt-%E8%B7%A8%E5%B9%B3%E5%8F%B0%E7%94%9F%E6%88%90dump%E6%96%87%E4%BB%B6/">
+<link rel="canonical" href="https://andersonlung.github.io/2021/10/25/C-%E5%9F%BA%E7%A1%80/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://andersonlung.github.io/2021/10/20/qt-%E8%B7%A8%E5%B9%B3%E5%8F%B0%E7%94%9F%E6%88%90dump%E6%96%87%E4%BB%B6/","path":"2021/10/20/qt-跨平台生成dump文件/","title":"qt 跨平台生成dump文件"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://andersonlung.github.io/2021/10/25/C-%E5%9F%BA%E7%A1%80/","path":"2021/10/25/C-基础/","title":"C++基础"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>qt 跨平台生成dump文件 | 松香小站</title>
+<title>C++基础 | 松香小站</title>
   
 
 
@@ -121,7 +118,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#dump%E6%96%87%E4%BB%B6%E9%87%8D%E8%A6%81%E6%80%A7"><span class="nav-number">1.</span> <span class="nav-text">dump文件重要性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#WIN-%E7%9A%84DUMP-%E6%96%87%E4%BB%B6%E7%94%9F%E6%88%90"><span class="nav-number">2.</span> <span class="nav-text">WIN 的DUMP 文件生成</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Linux-%E7%9A%84DUMP-%E6%96%87%E4%BB%B6%E7%94%9F%E6%88%90"><span class="nav-number">3.</span> <span class="nav-text">Linux 的DUMP 文件生成</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Breakpad"><span class="nav-number">3.1.</span> <span class="nav-text">Breakpad</span></a></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%9C%AC%E7%95%8C%E9%9D%A2%E4%B8%BB%E8%A6%81%E8%AE%B0%E5%BD%95C-%E7%9A%84%E4%B8%80%E4%BA%9B%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E5%92%8C%E5%AE%9E%E6%93%8D"><span class="nav-number">1.</span> <span class="nav-text">本界面主要记录C++ 的一些基础知识和实操</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9E%84%E9%80%A0"><span class="nav-number"></span> <span class="nav-text">构造</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#explicit-%E5%85%B3%E9%94%AE%E5%AD%97"><span class="nav-number"></span> <span class="nav-text">explicit 关键字</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9E%90%E6%9E%84"><span class="nav-number"></span> <span class="nav-text">析构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#c-%E5%86%85%E5%AD%98%E5%B8%83%E5%B1%80"><span class="nav-number"></span> <span class="nav-text">c++ 内存布局</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%B3%E9%94%AE%E5%AD%97-static-const"><span class="nav-number"></span> <span class="nav-text">关键字 static  const</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#C-%E9%87%8C%E7%9A%84%E9%9D%99%E6%80%81%E6%88%90%E5%91%98%E5%87%BD%E6%95%B0%E4%B8%8D%E8%83%BD%E7%94%A8const%E3%80%81volatile%E7%9A%84%E5%8E%9F%E5%9B%A0"><span class="nav-number">1.</span> <span class="nav-text">C++里的静态成员函数不能用const、volatile的原因</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%99%9A%E5%87%BD%E6%95%B0%E5%92%8C%E8%99%9A%E5%87%BD%E6%95%B0%E8%A1%A8"><span class="nav-number"></span> <span class="nav-text">虚函数和虚函数表</span></a></div>
         </div>
         <!--/noindex-->
 
@@ -189,7 +186,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://andersonlung.github.io/2021/10/20/qt-%E8%B7%A8%E5%B9%B3%E5%8F%B0%E7%94%9F%E6%88%90dump%E6%96%87%E4%BB%B6/">
+    <link itemprop="mainEntityOfPage" href="https://andersonlung.github.io/2021/10/25/C-%E5%9F%BA%E7%A1%80/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -202,7 +199,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          qt 跨平台生成dump文件
+          C++基础
         </h1>
 
         <div class="post-meta-container">
@@ -214,7 +211,7 @@
       <span class="post-meta-item-text">发表于</span>
       
 
-      <time title="创建时间：2021-10-20 10:44:59 / 修改时间：14:11:57" itemprop="dateCreated datePublished" datetime="2021-10-20T10:44:59+08:00">2021-10-20</time>
+      <time title="创建时间：2021-10-25 15:02:11 / 修改时间：16:52:38" itemprop="dateCreated datePublished" datetime="2021-10-25T15:02:11+08:00">2021-10-25</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -222,11 +219,7 @@
       </span>
       <span class="post-meta-item-text">分类于</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/QT/" itemprop="url" rel="index"><span itemprop="name">QT</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/QT/C/" itemprop="url" rel="index"><span itemprop="name">C++</span></a>
+          <a href="/categories/C/" itemprop="url" rel="index"><span itemprop="name">C++</span></a>
         </span>
     </span>
 
@@ -237,7 +230,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>164</span>
+      <span>859</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
@@ -257,8 +250,13 @@
     <div class="post-body" itemprop="articleBody">
         <meta name="referrer" content="no-referrer">
 
-<h3 id="dump文件重要性"><a href="#dump文件重要性" class="headerlink" title="dump文件重要性"></a>dump文件重要性</h3><h3 id="WIN-的DUMP-文件生成"><a href="#WIN-的DUMP-文件生成" class="headerlink" title="WIN 的DUMP 文件生成"></a>WIN 的DUMP 文件生成</h3><h3 id="Linux-的DUMP-文件生成"><a href="#Linux-的DUMP-文件生成" class="headerlink" title="Linux 的DUMP 文件生成"></a>Linux 的DUMP 文件生成</h3><h4 id="Breakpad"><a href="#Breakpad" class="headerlink" title="Breakpad"></a>Breakpad</h4><p> Breakpad是google 提供的一个开源跨平台奔溃处理框架，内含转储、上报、分析<br> 官方文档介绍：<a target="_blank" rel="noopener" href="http://code.google.com/p/google-breakpad/wiki/GettingStartedWithBreakpad">http://code.google.com/p/google-breakpad/wiki/GettingStartedWithBreakpad</a><br> <img src="https://img-blog.csdnimg.cn/20210402142301295.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTQ1OTcxOTg=,size_16,color_FFFFFF,t_70" width="75%" height="75%"></p>
-
+<h5 id="本界面主要记录C-的一些基础知识和实操"><a href="#本界面主要记录C-的一些基础知识和实操" class="headerlink" title="本界面主要记录C++ 的一些基础知识和实操"></a>本界面主要记录C++ 的一些基础知识和实操</h5><h3 id="构造"><a href="#构造" class="headerlink" title="构造"></a>构造</h3><p>  构造函数分为默认无参构造，有参构造 拷贝构造 移动构造<br>  以Student为例<br>  默认无参为： <code>Student();</code><br>  一般构造为 ： <code>Student(const String &amp;name);</code><br>  一般构造函数带默认参数 ： <code>Student(const String &amp;name,const nation = &quot;zh&quot;);</code><br>  拷贝构造：<code>Student(const Student &amp;xiaoming)</code>  拷贝构造为深拷贝<br>  移动构造：<code>Student(const Student &amp;xiaoming)</code> 移动构造为浅拷贝，提供指针移动和赋值的机制</p>
+<h4 id="explicit-关键字"><a href="#explicit-关键字" class="headerlink" title="explicit 关键字"></a>explicit 关键字</h4><p>  主要作用是阻止系统采用默认构造，不允许构造函数的隐式转换</p>
+<h3 id="析构"><a href="#析构" class="headerlink" title="析构"></a>析构</h3><p>  析构主要处理额外释放一些资源 </p>
+<h3 id="c-内存布局"><a href="#c-内存布局" class="headerlink" title="c++ 内存布局"></a>c++ 内存布局</h3><p>  c++ 内存布局主要分为  堆、栈、自由存储区、全局/静态区、常量存储区<br>  堆：由用户控制，使用malloc的申请的分配内存空间，操作系统维护的特殊内存空间<br>  栈：由系统控制，申请必要的局部内存单元，处理器的指令集<br>  自由存储区：用于new 申请的内存分配空间<br>  全局/静态区：程序编译时产生的变量，在程序生命周期都存在的变量<br>  常量存储区：特殊存储区，存储常量，不允许更改</p>
+<h3 id="关键字-static-const"><a href="#关键字-static-const" class="headerlink" title="关键字 static  const"></a>关键字 static  const</h3><p>  const 表示对象和变量是常量，初始化必须赋值，不能修改值<br>  const 变量是文件的局部变量，其他文件访问必须指定为extern<br>  在《Effective C++》中条款2和条款3 使用const 代替#define 主要原因是指定类型和尽量使用const<br>  static 表示作用范围是改函数体 ，不同于其他的变量，static 在内存中只有一份，不需要多次分配。但是仍然具有文件使用区域的限制</p>
+<h5 id="C-里的静态成员函数不能用const、volatile的原因"><a href="#C-里的静态成员函数不能用const、volatile的原因" class="headerlink" title="C++里的静态成员函数不能用const、volatile的原因"></a>C++里的静态成员函数不能用const、volatile的原因</h5><p>  static成员不是任何对象的组成部分，所以static成员函数不能被声明为const，毕竟，将成员函数声明为const就是承诺不会修改该函数所属的对象。最后，static成员函数也不能被声明为虚函数。</p>
+<h3 id="虚函数和虚函数表"><a href="#虚函数和虚函数表" class="headerlink" title="虚函数和虚函数表"></a>虚函数和虚函数表</h3>
     </div>
 
     
@@ -267,22 +265,18 @@
 
     <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/DUMP/" rel="tag"># DUMP</a>
-              <a href="/tags/Breakpad/" rel="tag"># Breakpad</a>
+              <a href="/tags/C/" rel="tag"># C++</a>
           </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/2021/10/09/%E8%BF%9B%E7%A8%8B%E7%AE%A1%E7%90%86%E5%92%8C%E8%BF%9B%E7%A8%8B%E8%B0%83%E5%BA%A6/" rel="prev" title="进程管理和进程调度">
-                  <i class="fa fa-chevron-left"></i> 进程管理和进程调度
+                <a href="/2021/10/20/qt-%E8%B7%A8%E5%B9%B3%E5%8F%B0%E7%94%9F%E6%88%90dump%E6%96%87%E4%BB%B6/" rel="prev" title="qt 跨平台生成dump文件">
+                  <i class="fa fa-chevron-left"></i> qt 跨平台生成dump文件
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2021/10/25/C-%E5%9F%BA%E7%A1%80/" rel="next" title="C++基础">
-                  C++基础 <i class="fa fa-chevron-right"></i>
-                </a>
             </div>
           </div>
     </footer>
