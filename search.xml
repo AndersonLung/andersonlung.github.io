@@ -170,4 +170,18 @@
         <tag>C++</tag>
       </tags>
   </entry>
+  <entry>
+    <title>协议</title>
+    <url>/2021/10/26/%E5%8D%8F%E8%AE%AE/</url>
+    <content><![CDATA[<meta name="referrer" content="no-referrer">
+
+<h3 id="HTTP协议"><a href="#HTTP协议" class="headerlink" title="HTTP协议"></a>HTTP协议</h3><h3 id="HTTP-1-0"><a href="#HTTP-1-0" class="headerlink" title="HTTP 1.0"></a>HTTP 1.0</h3><h3 id="HTTP-1-1"><a href="#HTTP-1-1" class="headerlink" title="HTTP 1.1"></a>HTTP 1.1</h3><h3 id="HTTP2-0"><a href="#HTTP2-0" class="headerlink" title="HTTP2.0"></a>HTTP2.0</h3>]]></content>
+      <categories>
+        <category>通信协议</category>
+      </categories>
+      <tags>
+        <tag>HTTP</tag>
+        <tag>通信协议</tag>
+      </tags>
+  </entry>
 </search>
