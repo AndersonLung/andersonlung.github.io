@@ -193,7 +193,21 @@
     <url>/2021/10/26/MQTT%E5%92%8CWEBSOCKET-%E5%8D%8F%E8%AE%AE/</url>
     <content><![CDATA[<meta name="referrer" content="no-referrer">
 
-<h2 id="MQTT-协议"><a href="#MQTT-协议" class="headerlink" title="MQTT 协议"></a>MQTT 协议</h2><h2 id="WEBSOCKET-协议"><a href="#WEBSOCKET-协议" class="headerlink" title="WEBSOCKET 协议"></a>WEBSOCKET 协议</h2>]]></content>
+<h2 id="MQTT-协议"><a href="#MQTT-协议" class="headerlink" title="MQTT 协议"></a>MQTT 协议</h2><p>mqtt协议主要用于物联网<br>提供topic 供服务端和客户端来订阅和发布<br>主要优点</p>
+<ul>
+<li>实现简单</li>
+<li>提供数据传输的 QoS</li>
+<li>轻量、占用带宽低</li>
+<li>可传输任意类型的数据</li>
+<li>可保持的会话（session）<img src="https://pic4.zhimg.com/80/v2-df0a41bab88efe5bf981b4e99e503337_720w.jpg" width="75%" height="75%"></li>
+</ul>
+<p>服务质量：qos</p>
+<ul>
+<li>0 最多一次</li>
+<li>1 至少一次</li>
+<li>2 仅一次</li>
+</ul>
+<h2 id="WEBSOCKET-协议"><a href="#WEBSOCKET-协议" class="headerlink" title="WEBSOCKET 协议"></a>WEBSOCKET 协议</h2>]]></content>
       <categories>
         <category>通信协议</category>
       </categories>
