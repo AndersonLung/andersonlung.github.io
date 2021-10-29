@@ -207,7 +207,8 @@
 <li>1 至少一次</li>
 <li>2 仅一次</li>
 </ul>
-<h2 id="WEBSOCKET-协议"><a href="#WEBSOCKET-协议" class="headerlink" title="WEBSOCKET 协议"></a>WEBSOCKET 协议</h2>]]></content>
+<h2 id="WEBSOCKET-协议"><a href="#WEBSOCKET-协议" class="headerlink" title="WEBSOCKET 协议"></a>WEBSOCKET 协议</h2><p>websocket 全双工通信，双向可以相互推送，用来消息通信</p>
+]]></content>
       <categories>
         <category>通信协议</category>
       </categories>
