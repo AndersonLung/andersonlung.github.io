@@ -415,7 +415,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-11-04 19:13:33" itemprop="dateModified" datetime="2021-11-04T19:13:33+08:00">2021-11-04</time>
+        <time title="修改时间：2021-11-04 20:12:17" itemprop="dateModified" datetime="2021-11-04T20:12:17+08:00">2021-11-04</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -434,14 +434,14 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>3.6k</span>
+      <span>4.9k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>3 分钟</span>
+      <span>4 分钟</span>
     </span>
 </div>
 
@@ -531,7 +531,50 @@
 <li>push_back  pop_back 是处理的尾部的增加和删除</li>
 <li>swap 交换两个vector</li>
 </ul>
-<h4 id="List"><a href="#List" class="headerlink" title="List"></a>List</h4><h4 id="map"><a href="#map" class="headerlink" title="map"></a>map</h4><h4 id="set"><a href="#set" class="headerlink" title="set"></a>set</h4><h4 id="queue"><a href="#queue" class="headerlink" title="queue"></a>queue</h4><h4 id="stack"><a href="#stack" class="headerlink" title="stack"></a>stack</h4><h2 id="Linux-相关"><a href="#Linux-相关" class="headerlink" title="Linux 相关"></a>Linux 相关</h2><h3 id="查看进程"><a href="#查看进程" class="headerlink" title="查看进程"></a>查看进程</h3><p>top<br>ps -aux</p>
+<h4 id="array"><a href="#array" class="headerlink" title="array"></a>array</h4><p>std::array&lt;int, 4&gt;<br>std::array对象的大小是固定的<br>迭代器同vector</p>
+<ul>
+<li>front</li>
+<li>back</li>
+<li>at</li>
+<li>operator[]</li>
+</ul>
+<h4 id="deque"><a href="#deque" class="headerlink" title="deque"></a>deque</h4><p>一段一段的定量连续空间构成,在前端和尾端增删数据很快，但是在中间增删就会遍历和移动</p>
+<ul>
+<li>优点：支持随机访问，即 [] 操作和 .at()，所以查询效率高；可在双端进行 pop，push。</li>
+<li>缺点：不适合中间插入删除操作；占用内存多。</li>
+<li>适用场景：适用于既要频繁随机存取，又要关心两端数据的插入与删除的场景。</li>
+</ul>
+<h5 id="迭代器和常见用法函数"><a href="#迭代器和常见用法函数" class="headerlink" title="迭代器和常见用法函数"></a>迭代器和常见用法函数</h5><ul>
+<li>容器大小：deq.size();</li>
+<li>容器最大容量：deq.max_size();</li>
+<li>更改容器大小：deq.resize();</li>
+<li>容器判空：deq.empty();</li>
+<li>减少容器大小到满足元素所占存储空间的大小：deq.shrink_to_fit();</li>
+<li>头部添加元素：deq.push_front(const T&amp; x);</li>
+<li>末尾添加元素：deq.push_back(const T&amp; x);</li>
+<li>任意位置插入一个元素：deq.insert(iterator it, const T&amp; x);</li>
+<li>任意位置插入 n 个相同元素：deq.insert(iterator it, int n, const T&amp; x);</li>
+<li>插入另一个向量的 [forst,last] 间的数据：deq.insert(iterator it, iterator first, iterator last);</li>
+<li>头部删除元素：deq.pop_front();</li>
+<li>末尾删除元素：deq.pop_back();</li>
+<li>任意位置删除一个元素：deq.erase(iterator it);</li>
+<li>删除 [first,last] 之间的元素：deq.erase(iterator first, iterator last);</li>
+<li>清空所有元素：deq.clear();</li>
+<li>下标访问：deq[1]; // 并不会检查是否越界</li>
+<li>at 方法访问：deq.at(1); // 以上两者的区别就是 at 会检查是否越界，是则抛出 out of range 异常</li>
+<li>访问第一个元素：deq.front();</li>
+<li>访问最后一个元素：deq.back();</li>
+<li>多个元素赋值：deq.assign(int nSize, const T&amp; x); // 类似于初始化时用数组进行赋值</li>
+<li>交换两个同类型容器的元素：swap(deque&amp;);</li>
+<li>开始迭代器指针：deq.begin();</li>
+<li>末尾迭代器指针：deq.end(); // 指向最后一个元素的下一个位置</li>
+<li>指向常量的开始迭代器指针：deq.cbegin(); // 意思就是不能通过这个指针来修改所指的内容，但还是可以通过其他方式修改的，而且指针也是可以移动的。</li>
+<li>指向常量的末尾迭代器指针：deq.cend();</li>
+<li>反向迭代器指针，指向最后一个元素：deq.rbegin();</li>
+<li>反向迭代器指针，指向第一个元素的前一个元素：deq.rend();</li>
+</ul>
+<h4 id="List"><a href="#List" class="headerlink" title="List"></a>List</h4><p>双向链表（doubly linked list）实现而成，元素也存放在堆中，每个元素都是放在一块内存中，它的内存空间可以是不连续的，通过指针来进行数据的访问，这个特点使得它的随机存取变得非常没有效率，因此它没有提供 [] 操作符的重载，由于链表特点可以很有效率的进行随机的增删<br>优点：内存不连续，动态操作，可在任意位置插入或删除且效率高。<br>缺点：不支持随机访问。<br>适用场景：适用于经常进行插入和删除操作并且不经常随机访问的场景。</p>
+<h5 id="迭代器和常见函数"><a href="#迭代器和常见函数" class="headerlink" title="迭代器和常见函数"></a>迭代器和常见函数</h5><h4 id="map"><a href="#map" class="headerlink" title="map"></a>map</h4><h4 id="set"><a href="#set" class="headerlink" title="set"></a>set</h4><h4 id=""><a href="#" class="headerlink" title=""></a></h4><h4 id="stack"><a href="#stack" class="headerlink" title="stack"></a>stack</h4><h2 id="Linux-相关"><a href="#Linux-相关" class="headerlink" title="Linux 相关"></a>Linux 相关</h2><h3 id="查看进程"><a href="#查看进程" class="headerlink" title="查看进程"></a>查看进程</h3><p>top<br>ps -aux</p>
 <h3 id="查看使用共享库"><a href="#查看使用共享库" class="headerlink" title="查看使用共享库"></a>查看使用共享库</h3><p>ipcs -m</p>
 <h3 id="调试相关"><a href="#调试相关" class="headerlink" title="调试相关"></a>调试相关</h3><p>gdb  用于调试处理<br>b 设置断点行数</p>
 <ul>
@@ -1094,14 +1137,14 @@
       <i class="fa fa-chart-line"></i>
     </span>
       <span>站点总字数：</span>
-    <span title="站点总字数">6k</span>
+    <span title="站点总字数">8k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span>站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">6 分钟</span>
+    <span title="站点阅读时长">7 分钟</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/mist/" rel="noopener" target="_blank">NexT.Mist</a> 强力驱动
