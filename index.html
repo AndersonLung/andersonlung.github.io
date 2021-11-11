@@ -415,7 +415,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-11-08 20:51:07" itemprop="dateModified" datetime="2021-11-08T20:51:07+08:00">2021-11-08</time>
+        <time title="修改时间：2021-11-11 20:07:24" itemprop="dateModified" datetime="2021-11-11T20:07:24+08:00">2021-11-11</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -434,14 +434,14 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>9.7k</span>
+      <span>15k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>9 分钟</span>
+      <span>14 分钟</span>
     </span>
 </div>
 
@@ -519,11 +519,30 @@
 <li>申请的内存所在位置 new操作符从自由存储区（free store）上为对象动态分配内存空间，而malloc函数从堆上动态分配内存</li>
 <li>返回类型安全性 new操作符内存分配成功时，返回的是对象类型的指针，类型严格与对象匹配，无须进行类型转换，故new是符合类型安全性的操作符。而malloc内存分配成功则是返回void * ，需要通过强制类型转换将void*指针转换成我们需要的类型</li>
 <li>内存分配失败时的返回值. new内存分配失败时，会抛出bac_alloc异常，它不会返回NULL；malloc分配内存失败时返回NULL</li>
+<li>是否需要指定内存大小  使用new操作符申请内存分配时无须指定内存块的大小，编译器会根据类型信息自行计算，而malloc则需要显式地指出所需内存的尺寸。</li>
 </ul>
-<h4 id="多线程通信"><a href="#多线程通信" class="headerlink" title="多线程通信"></a>多线程通信</h4><h4 id="多进程通信"><a href="#多进程通信" class="headerlink" title="多进程通信"></a>多进程通信</h4><h4 id="多线程通信-1"><a href="#多线程通信-1" class="headerlink" title="多线程通信"></a>多线程通信</h4><h4 id="智能指针"><a href="#智能指针" class="headerlink" title="智能指针"></a>智能指针</h4><h5 id="如何实现一个智能指针"><a href="#如何实现一个智能指针" class="headerlink" title="如何实现一个智能指针"></a>如何实现一个智能指针</h5><h5 id="共享指针-1-什么情况下会产生"><a href="#共享指针-1-什么情况下会产生" class="headerlink" title="共享指针+1 什么情况下会产生"></a>共享指针+1 什么情况下会产生</h5><h4 id="模板"><a href="#模板" class="headerlink" title="模板"></a>模板</h4><h5 id="什么情况下需要用到模板"><a href="#什么情况下需要用到模板" class="headerlink" title="什么情况下需要用到模板"></a>什么情况下需要用到模板</h5><h3 id="C-语言相关"><a href="#C-语言相关" class="headerlink" title="C 语言相关"></a>C 语言相关</h3><h4 id="C-语言如何访问另一个文件的全局变量"><a href="#C-语言如何访问另一个文件的全局变量" class="headerlink" title="C 语言如何访问另一个文件的全局变量"></a>C 语言如何访问另一个文件的全局变量</h4><p>使用extern  extern可以置于变量或者函数前，以标示变量或者函数的定义在别的文件中，提示编译器遇到此变量和函数时在其他模块中寻找其定义</p>
-<h3 id="QT相关"><a href="#QT相关" class="headerlink" title="QT相关"></a>QT相关</h3><h4 id="信号与槽机制"><a href="#信号与槽机制" class="headerlink" title="信号与槽机制"></a>信号与槽机制</h4><h4 id="半自动管理内存机制"><a href="#半自动管理内存机制" class="headerlink" title="半自动管理内存机制"></a>半自动管理内存机制</h4><h4 id="事件循环机制"><a href="#事件循环机制" class="headerlink" title="事件循环机制"></a>事件循环机制</h4><h4 id="相关线程的通信机制、"><a href="#相关线程的通信机制、" class="headerlink" title="相关线程的通信机制、"></a>相关线程的通信机制、</h4><h4 id="进程通讯机制"><a href="#进程通讯机制" class="headerlink" title="进程通讯机制"></a>进程通讯机制</h4><h4 id="智能指针-1"><a href="#智能指针-1" class="headerlink" title="智能指针"></a>智能指针</h4><h4 id="Qobject-的作用"><a href="#Qobject-的作用" class="headerlink" title="Qobject 的作用"></a>Qobject 的作用</h4><p>MOC 元对象系统，引入qobject 可以使用元对象系统的特性，比如信号和槽函数</p>
+<p>| 特征 |    new/delete |    malloc/free |<br>|  —-  | —-  | — | — |<br>|分配内存的位置     |自由存储区 |    堆 |<br>|内存分配成功的返回值 |    完整类型指针 |    void* |<br>|内存分配失败的返回值 |     默认抛出异常 |     返回NULL |<br>|分配内存的大小 |     由编译器根据类型计算得出 |    必须显式指定字节数 |<br>|处理数组     | 有处理数组的new版本new[] |     需要用户计算数组的大小后进行内存分配 |<br>|已分配内存的扩充 |    无法直观地处理 |     使用realloc简单完成 |<br>|是否相互调用 |     可以，看具体的operator new/delete实现 |     不可调用new |<br>|分配内存时内存不足 |     客户能够指定处理函数或重新制定分配器 |    无法通过用户代码进行处理 |<br>|函数重载    | 允许 |     不允许 |<br>| 构造函数与析构函数 |    调用 |    不调用 |</p>
+<h4 id="多线程通信"><a href="#多线程通信" class="headerlink" title="多线程通信"></a>多线程通信</h4><p>用户模式下的方法有：原子操作（例如一个单一的全局变量），临界区。<br>内核模式下的方法有：事件，信号量，互斥量。<br>1、临界区:通过对多线程的串行化来访问公共资源或一段代码，速度快，适合控制数据访问。<br>2、互斥量:为协调共同对一个共享资源的单独访问而设计的。<br>3、信号量:为控制一个具有有限数量用户资源而设计。 PV 操作<br>4、事 件:用来通知线程有一些事件已发生，从而启动后继任务的开始。</p>
+<h4 id="多进程通信"><a href="#多进程通信" class="headerlink" title="多进程通信"></a>多进程通信</h4><ol>
+<li>管道pipe：管道是一种半双工的通信方式，数据只能单向流动，而且只能在具有亲缘关系的进程间使用。进程的亲缘关系通常是指父子进程关系</li>
+<li>命名管道FIFO：有名管道也是半双工的通信方式，但是它允许无亲缘关系进程间的通信。</li>
+<li>消息队列MessageQueue：消息队列是由消息的链表，存放在内核中并由消息队列标识符标识。消息队列克服了信号传递信息少、管道只能承载无格式字节流以及缓冲区大小受限等缺点。</li>
+<li>共享存储SharedMemory：共享内存就是映射一段能被其他进程所访问的内存，这段共享内存由一个进程创建，但多个进程都可以访问。共享内存是最快的 IPC 方式，它是针对其他进程间通信方式运行效率低而专门设计的。它往往与其他通信机制，如信号两，配合使用，来实现进程间的同步和通信。</li>
+<li>信号量Semaphore：信号量是一个计数器，可以用来控制多个进程对共享资源的访问。它常作为一种锁机制，防止某进程正在访问共享资源时，其他进程也访问该资源。因此，主要作为进程间以及同一进程内不同线程之间的同步手段。</li>
+<li>套接字Socket：套解口也是一种进程间通信机制，与其他通信机制不同的是，它可用于不同主机间的进程通信。</li>
+<li>信号 ( sinal ) ： 信号是一种比较复杂的通信方式，用于通知接收进程某个事件已经发生。</li>
+</ol>
+<h4 id="智能指针"><a href="#智能指针" class="headerlink" title="智能指针"></a>智能指针</h4><p>auto_ptr, shared_ptr, weak_ptr, unique_ptr 其中后三个是c++11支持，并且第一个已经被c++11弃用<br>weak_ptr是用来解决shared_ptr相互引用时的死锁问题<br>1、拥有它指向的对象<br>2、无法进行复制构造，无法进行复制赋值操作。即无法使两个unique_ptr指向同一个对象。但是可以进行移动构造和移动赋值操作<br>3、保存指向某个对象的指针，当它本身被删除释放的时候，会使用给定的删除器释放它指向的对象<br>当创建类的新对象时，初始化指针，并将引用计数设置为1<br>当对象作为另一个对象的副本时，复制构造函数复制副本指针，并增加与指针相应的引用计数（加1）<br>使用赋值操作符对一个对象进行赋值时，处理复杂一点：先使左操作数的指针的引用计数减1（为何减1：因为指针已经指向别的地方），如果减1后引用计数为0，则释放指针所指对象内存。然后增加右操作数所指对象的引用计数（为何增加：因为此时做操作数指向对象即右操作数指向对象）。<br>析构函数：调用析构函数时，析构函数先使引用计数减1，如果减至0则delete对象。<br>引用计数指的是，所有管理同一个裸指针（raw pointer）的shared_ptr，都共享一个引用计数器，每当一个shared_ptr被赋值（或拷贝构造）给其它shared_ptr时，这个共享的引用计数器就加1，当一个shared_ptr析构或者被用于管理其它裸指针时，这个引用计数器就减1，如果此时发现引用计数器为0，那么说明它是管理这个指针的最后一个shared_ptr了，于是我们释放指针指向的资源。</p>
+<p>一种独占的智能指针，它禁止其他智能指针与其共享同一个对象，从而保证了代码的安全<br>std::unique_ptr<br>一种独占的智能指针，它禁止其他智能指针与其共享同一个对象，从而保证了代码的安全<br>既然是独占，换句话说就是不可复制。但是，我们可以利用 std::move 将其转移给其他的 unique_ptr</p>
+<h5 id="如何实现一个智能指针"><a href="#如何实现一个智能指针" class="headerlink" title="如何实现一个智能指针"></a>如何实现一个智能指针</h5><h5 id="共享指针-1-什么情况下会产生"><a href="#共享指针-1-什么情况下会产生" class="headerlink" title="共享指针+1 什么情况下会产生"></a>共享指针+1 什么情况下会产生</h5><h5 id="多个指针访问同一个引用计数器"><a href="#多个指针访问同一个引用计数器" class="headerlink" title="多个指针访问同一个引用计数器"></a>多个指针访问同一个引用计数器</h5><h5 id="共享指针的引用计数器是线程安全吗？"><a href="#共享指针的引用计数器是线程安全吗？" class="headerlink" title="共享指针的引用计数器是线程安全吗？"></a>共享指针的引用计数器是线程安全吗？</h5><p>引用计数器是原子性 线程安全</p>
+<h4 id="模板"><a href="#模板" class="headerlink" title="模板"></a>模板</h4><p>模板可以使用户为类或者函数声明一种一般模式，使得类中的某些数据成员或者成员函数的参数、返回值取得任意类型。也就是能让用户减少为每一个类型创造重复的函数或者类</p>
+<h5 id="函数模板"><a href="#函数模板" class="headerlink" title="函数模板"></a>函数模板</h5><h5 id="类模板"><a href="#类模板" class="headerlink" title="类模板"></a>类模板</h5><p>定义一批相似的类</p>
+<h5 id="什么情况下需要用到模板，什么时候用继承"><a href="#什么情况下需要用到模板，什么时候用继承" class="headerlink" title="什么情况下需要用到模板，什么时候用继承"></a>什么情况下需要用到模板，什么时候用继承</h5><p>当对象的类型不影响类中函数的行为时，使用模板。如：常见的堆、栈、队列；<br>对象的类型不影响类中函数的行为：堆、栈这些无论对象是什么，都少补了入栈，出栈等操作。并不改变函数的行为。</p>
+<h3 id="C-语言相关"><a href="#C-语言相关" class="headerlink" title="C 语言相关"></a>C 语言相关</h3><h4 id="C-语言如何访问另一个文件的全局变量"><a href="#C-语言如何访问另一个文件的全局变量" class="headerlink" title="C 语言如何访问另一个文件的全局变量"></a>C 语言如何访问另一个文件的全局变量</h4><p>使用extern  extern可以置于变量或者函数前，以标示变量或者函数的定义在别的文件中，提示编译器遇到此变量和函数时在其他模块中寻找其定义</p>
+<h3 id="QT相关"><a href="#QT相关" class="headerlink" title="QT相关"></a>QT相关</h3><h4 id="信号与槽机制"><a href="#信号与槽机制" class="headerlink" title="信号与槽机制"></a>信号与槽机制</h4><p>所谓的信号与槽，其实都是函数。当特定事件被触发时（如在输入框输入了字符）将发送一个信号，而与该信号建立的连接槽，则可以接收到该信号并做出反应(激活Find按钮)。<br>QT组件预定义了很多信号和槽，而在GUI编程中，我们习惯于继承那些组件，继承后添加我们自己的槽，以便以我们的方式来处理信号。槽和普通的C++成员函数几乎是一样的，它可以是虚函数，可以被重载，可以是共有、私有或是保护的，也同样可以被其他成员函数调用。它的函数参数也可以是任意类型的。唯一不同的是：槽还可以和信号连接在一起。<br>与回调不同，信号槽机制是类型安全的。这体现在信号的函数签名与槽的函数签名必须匹配上，才能够发生信号的传递。实际上，槽的参数个数可以比信号的参数个数少，因为槽能够忽略信号形参中多出来的参数。信号和槽是松耦合的：发出信号的类不关心哪些类将接收它的信号。QT的信号槽机制吧哦这里在正确的时间，槽能够接收到信号的参数并调用。信号和槽都可以有任意个数的参数，它们都是类型安全的。</p>
+<h4 id="半自动管理内存机制"><a href="#半自动管理内存机制" class="headerlink" title="半自动管理内存机制"></a>半自动管理内存机制</h4><h4 id="事件循环机制"><a href="#事件循环机制" class="headerlink" title="事件循环机制"></a>事件循环机制</h4><h4 id="相关线程的通信机制、"><a href="#相关线程的通信机制、" class="headerlink" title="相关线程的通信机制、"></a>相关线程的通信机制、</h4><h4 id="进程通讯机制"><a href="#进程通讯机制" class="headerlink" title="进程通讯机制"></a>进程通讯机制</h4><h4 id="智能指针-1"><a href="#智能指针-1" class="headerlink" title="智能指针"></a>智能指针</h4><h4 id="Qobject-的作用"><a href="#Qobject-的作用" class="headerlink" title="Qobject 的作用"></a>Qobject 的作用</h4><p>MOC 元对象系统，引入qobject 可以使用元对象系统的特性，比如信号和槽函数</p>
 <h4 id="信号和槽函数-虚函数"><a href="#信号和槽函数-虚函数" class="headerlink" title="信号和槽函数  虚函数"></a>信号和槽函数  虚函数</h4><p>槽函数 可以是虚函数，是因为在构造函数调用connect 函数时，如果是子类，实际上connect 的是父类的对象的槽函数，此时基类指针指向子类对象，如果是构造中使用connect 来处理，需要再构造中将基类的槽函数设置为虚函数</p>
-<h2 id="数据结构相关"><a href="#数据结构相关" class="headerlink" title="数据结构相关"></a>数据结构相关</h2><h4 id="数组和链表"><a href="#数组和链表" class="headerlink" title="数组和链表"></a>数组和链表</h4><p>数组 能二分查找前提是 有序<br>链表不能直接二分查找  因为链表查词不能再O(1)时间内获得，还不如链表直接查找</p>
+<h4 id="信号与槽是轮询"><a href="#信号与槽是轮询" class="headerlink" title="信号与槽是轮询"></a>信号与槽是轮询</h4><h2 id="数据结构相关"><a href="#数据结构相关" class="headerlink" title="数据结构相关"></a>数据结构相关</h2><h4 id="数组和链表"><a href="#数组和链表" class="headerlink" title="数组和链表"></a>数组和链表</h4><p>数组 能二分查找前提是 有序<br>链表不能直接二分查找  因为链表查词不能再O(1)时间内获得，还不如链表直接查找</p>
 <h3 id="数据结构-复杂度"><a href="#数据结构-复杂度" class="headerlink" title="数据结构 复杂度"></a>数据结构 复杂度</h3><ul>
 <li>红黑树  O(lgn)</li>
 <li>链表   查询和插入  O(n)</li>
@@ -598,7 +617,21 @@
 <h4 id="List"><a href="#List" class="headerlink" title="List"></a>List</h4><p>双向链表（doubly linked list）实现而成，元素也存放在堆中，每个元素都是放在一块内存中，它的内存空间可以是不连续的，通过指针来进行数据的访问，这个特点使得它的随机存取变得非常没有效率，因此它没有提供 [] 操作符的重载，由于链表特点可以很有效率的进行随机的增删<br>优点：内存不连续，动态操作，可在任意位置插入或删除且效率高。<br>缺点：不支持随机访问。<br>适用场景：适用于经常进行插入和删除操作并且不经常随机访问的场景。</p>
 <h5 id="迭代器和常见函数"><a href="#迭代器和常见函数" class="headerlink" title="迭代器和常见函数"></a>迭代器和常见函数</h5><p>list<int> con;          //声明一个list<br>list<int>::iterator it; //声明一个迭代器<br>用法和基本的迭代器一致，通过迭代器指针来访问<br>empty()    判断容器中是否有元素，若无元素，则返回 true；反之，返回 false<br>size()    返回当前容器实际包含的元素个数<br>max_size()    返回容器所能包含元素个数的最大值，一般是 232-1<br>front()    返回第一个元素的引用<br>back()    返回最后一个元素的引用<br>assign()    用新元素替换容器中原有内容<br>swap(x,y)    交换两个容器中的元素，必须保证这两个容器中存储的元素类型是相同的<br>resize()    调整容器的大小<br>splice()    将一个 list 容器中的元素插入到另一个容器的指定位置<br>merge()    合并两个事先已排好序的 list 容器，并且合并之后的 list 容器依然是有序的<br>sort()    通过更改容器中元素的位置，将它们进行排序<br>reverse()    反转容器中元素的顺序</p>
 <h4 id="map"><a href="#map" class="headerlink" title="map"></a>map</h4><p>map 是通过一组的{key.value}来保存数据</p>
-<h4 id="hash-查找"><a href="#hash-查找" class="headerlink" title="hash 查找"></a>hash 查找</h4><h4 id="set"><a href="#set" class="headerlink" title="set"></a>set</h4><h4 id=""><a href="#" class="headerlink" title=""></a></h4><h4 id="stack"><a href="#stack" class="headerlink" title="stack"></a>stack</h4><h3 id="网络协议"><a href="#网络协议" class="headerlink" title="网络协议"></a>网络协议</h3><h4 id="TCP和UDP"><a href="#TCP和UDP" class="headerlink" title="TCP和UDP"></a>TCP和UDP</h4><h5 id="UDP-如果实现稳定传输"><a href="#UDP-如果实现稳定传输" class="headerlink" title="UDP 如果实现稳定传输"></a>UDP 如果实现稳定传输</h5><h5 id="socket-的阻塞"><a href="#socket-的阻塞" class="headerlink" title="socket 的阻塞"></a>socket 的阻塞</h5><h5 id="socket-断开后会产生什么影响"><a href="#socket-断开后会产生什么影响" class="headerlink" title="socket 断开后会产生什么影响"></a>socket 断开后会产生什么影响</h5><h5 id="HTTP-如何传输文件。如何让网站知道这是一个HTTP-以及上层和TCP-区别"><a href="#HTTP-如何传输文件。如何让网站知道这是一个HTTP-以及上层和TCP-区别" class="headerlink" title="HTTP 如何传输文件。如何让网站知道这是一个HTTP 以及上层和TCP 区别"></a>HTTP 如何传输文件。如何让网站知道这是一个HTTP 以及上层和TCP 区别</h5><h4 id="MQTT"><a href="#MQTT" class="headerlink" title="MQTT"></a>MQTT</h4><h5 id="MATT-通信质量"><a href="#MATT-通信质量" class="headerlink" title="MATT 通信质量"></a>MATT 通信质量</h5><h3 id="ROS-相关"><a href="#ROS-相关" class="headerlink" title="ROS 相关"></a>ROS 相关</h3><h4 id="ROS-通信机制实现的原理"><a href="#ROS-通信机制实现的原理" class="headerlink" title="ROS 通信机制实现的原理"></a>ROS 通信机制实现的原理</h4><h4 id="引用和指针-1"><a href="#引用和指针-1" class="headerlink" title="引用和指针"></a>引用和指针</h4><ul>
+<h4 id="hash-查找"><a href="#hash-查找" class="headerlink" title="hash 查找"></a>hash 查找</h4><h5 id="HASH-算法"><a href="#HASH-算法" class="headerlink" title="HASH 算法"></a>HASH 算法</h5><p>直接定址法：取关键字或关键字的某个线性函数值为散列地址。即hash(k) = k 或 hash(k) = a · k + b，其中a、b为常数（这种散列函数叫做自身函数）<br>数字分析法：假设关键字是以r为基的数，并且哈希表中可能出现的关键字都是事先知道的，则可取关键字的若干数位组成哈希地址。<br>平方取中法：取关键字平方后的中间几位为哈希地址。通常在选定哈希函数时不一定能知道关键字的全部情况，取其中的哪几位也不一定合适，而一个数平方后的中间几位数和数的每一位都相关，由此使随机分布的关键字得到的哈希地址也是随机的。取的位数由表长决定。<br>折叠法：将关键字分割成位数相同的几部分（最后一部分的位数可以不同），然后取这几部分的叠加和（舍去进位）作为哈希地址。<br>随机数法<br>除留余数法：取关键字被某个不大于散列表表长m的数p除后所得的余数为散列地址。即 hash(k) = k mod p， p&lt;=m。不仅可以对关键字直接取模，也可在折叠法、平方取中法等运算之后取模。对p的选择很重要，一般取素数或m，若p选择不好，容易产生冲突。</p>
+<h4 id="set"><a href="#set" class="headerlink" title="set"></a>set</h4><h4 id=""><a href="#" class="headerlink" title=""></a></h4><h4 id="stack"><a href="#stack" class="headerlink" title="stack"></a>stack</h4><h3 id="网络协议"><a href="#网络协议" class="headerlink" title="网络协议"></a>网络协议</h3><h4 id="TCP和UDP"><a href="#TCP和UDP" class="headerlink" title="TCP和UDP"></a>TCP和UDP</h4><h5 id="UDP-如何实现稳定传输"><a href="#UDP-如何实现稳定传输" class="headerlink" title="UDP 如何实现稳定传输"></a>UDP 如何实现稳定传输</h5><p>1、添加seq/ack机制，确保数据发送到对端<br>2、添加发送和接收缓冲区，主要是用户超时重传。<br>3、添加超时重传机制。<br>超时重传<br>1、使用超时机制，1-9序列，5丢失了，传完后，等待服务端来返回确认的序列号，这个时候会将5 的ack传回，因为滑动窗口机制，传5 后面的数据<br>2 超时是一个固定值，是通过计算可以得到的，每个数据包都加计时器，第二次超时重传就会时间变为两倍</p>
+<h5 id="socket-的阻塞"><a href="#socket-的阻塞" class="headerlink" title="socket 的阻塞"></a>socket 的阻塞</h5><h5 id="socket-断开后会产生什么影响"><a href="#socket-断开后会产生什么影响" class="headerlink" title="socket 断开后会产生什么影响"></a>socket 断开后会产生什么影响</h5><p>服务端断开socket 会导致客户端产生大量的time_wait<br>client 连接到 server 之后，client 进程意外奔溃，这时它会发送一个 FIN 给 server。<br>此时 server 并不知道 client 已经奔溃了，所以它会发送第一条消息给 client。但 client 已经退出了，所以 client 的 TCP 协议栈会发送一个 RST 给 server。<br>server 在接收到 RST 之后，继续写入第二条消息。往一个已经收到 RST 的 socket 继续写入数据，将导致SIGPIPE信号，从而杀死 server</p>
+<h5 id="HTTP-如何传输文件。如何让网站知道这是一个HTTP-以及上层和TCP-区别"><a href="#HTTP-如何传输文件。如何让网站知道这是一个HTTP-以及上层和TCP-区别" class="headerlink" title="HTTP 如何传输文件。如何让网站知道这是一个HTTP 以及上层和TCP 区别"></a>HTTP 如何传输文件。如何让网站知道这是一个HTTP 以及上层和TCP 区别</h5><p>Content-Type: multipart/form-data; boundary=巴拉巴拉<br>GET：获取资源，用来请求访问已被URI（统一资源标志符，和URL是包含和被包含的关系）识别的资源。<br>POST：用来传输实体的主体，虽然GET也可以实现，但是一般不用。<br>PUT：传输文件。但是鉴于PUT方法自身不带验证机制，任何人都可以上传文件，存在安全性问题，因此一般网站都不采用该方法。<br>HEAD:获得报文首部。和GET请求一样，只是不返回报文主体部分。<br>DELETE：删除文件。同样不带验证机制，存在安全性问题。<br>OPTIONS:询问指定的请求URI支持哪些方法。<br>TRACE:追踪路径，让Web服务器将之前的请求通信环回给客户端的方法。<br>CONNECT：要求在与代理服务器通信时建立隧道，实现隧道协议进行TCP通信。</p>
+<h4 id="MQTT"><a href="#MQTT" class="headerlink" title="MQTT"></a>MQTT</h4><h5 id="MQTT-通信质量"><a href="#MQTT-通信质量" class="headerlink" title="MQTT 通信质量"></a>MQTT 通信质量</h5><h4 id="websocket-原理"><a href="#websocket-原理" class="headerlink" title="websocket 原理"></a>websocket 原理</h4><p>全双工通讯方式<br>弥补HTTP短链接的缺陷</p>
+<ol>
+<li>支持双向通信，实时性更强。</li>
+<li>更好的二进制支持。</li>
+<li>较少的控制开销。连接创建后，ws客户端、服务端进行数据交换时，协议控制的数据包头部较小。在不包含头部的情况下，服务端到客户端的包头只有2~10字节（取决于数据包长度），客户端到服务端的的话，需要加上额外的4字节的掩码。而HTTP协议每次通信都需要携带完整的头部。</li>
+<li>支持扩展。ws协议定义了扩展，用户可以扩展协议，或者实现自定义的子协议。（比如支持自定义压缩算法等）<br>客户端通过HTTP请求与WebSocket服务端协商升级协议。协议升级完成后，后续的数据交换则遵照WebSocket的协议<br>重点请求首部意义如下：<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Connection: Upgrade：表示要升级协议</span><br><span class="line">Upgrade: websocket：表示要升级到websocket协议。</span><br><span class="line">Sec-WebSocket-Version: 13：表示websocket的版本。如果服务端不支持该版本，需要返回一个Sec-WebSocket-Versionheader，里面包含服务端支持的版本号。</span><br><span class="line">Sec-WebSocket-Key：与后面服务端响应首部的Sec-WebSocket-Accept是配套的，提供基本的防护，比如恶意的连接，或者无意的连接。</span><br></pre></td></tr></table></figure>
+服务端返回内容如下，状态代码101表示协议切换。到此完成协议升级，后续的数据交互都按照新的协议来<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">HTTP/1.1 101 Switching Protocols</span><br><span class="line">Connection:Upgrade</span><br><span class="line">Upgrade: websocket</span><br><span class="line">Sec-WebSocket-Accept: Oy4NRAQ13jhfONC7bP8dTKb4PTU=</span><br></pre></td></tr></table></figure>
+数据格式<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">0                   1                   2                   3</span><br><span class="line">  0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1</span><br><span class="line"> +-+-+-+-+-------+-+-------------+-------------------------------+</span><br><span class="line"> |F|R|R|R| opcode|M| Payload len |    Extended payload length    |</span><br><span class="line"> |I|S|S|S|  (4)  |A|     (7)     |             (16/64)           |</span><br><span class="line"> |N|V|V|V|       |S|             |   (if payload len==126/127)   |</span><br><span class="line"> | |1|2|3|       |K|             |                               |</span><br><span class="line"> +-+-+-+-+-------+-+-------------+ - - - - - - - - - - - - - - - +</span><br><span class="line"> |     Extended payload length continued, if payload len == 127  |</span><br><span class="line"> + - - - - - - - - - - - - - - - +-------------------------------+</span><br><span class="line"> |                               |Masking-key, if MASK set to 1  |</span><br><span class="line"> +-------------------------------+-------------------------------+</span><br><span class="line"> | Masking-key (continued)       |          Payload Data         |</span><br><span class="line"> +-------------------------------- - - - - - - - - - - - - - - - +</span><br><span class="line"> :                     Payload Data continued ...                :</span><br><span class="line"> + - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - +</span><br><span class="line"> |                     Payload Data continued ...                |</span><br><span class="line"> +---------------------------------------------------------------+</span><br></pre></td></tr></table></figure>
+连接保持+心跳<br>发送方-&gt;接收方：ping<br>接收方-&gt;发送方：pong<br>1、数据分片<br>WebSocket的每条消息可能被切分成多个数据帧。当WebSocket的接收方收到一个数据帧时，会根据FIN的值来判断，是否已经收到消息的最后一个数据帧。<br>FIN=1表示当前数据帧为消息的最后一个数据帧，此时接收方已经收到完整的消息，可以对消息进行处理。FIN=0，则接收方还需要继续监听接收其余的数据帧。</li>
+</ol>
+<h3 id="ROS-相关"><a href="#ROS-相关" class="headerlink" title="ROS 相关"></a>ROS 相关</h3><h4 id="ROS-通信机制实现的原理"><a href="#ROS-通信机制实现的原理" class="headerlink" title="ROS 通信机制实现的原理"></a>ROS 通信机制实现的原理</h4><h4 id="引用和指针-1"><a href="#引用和指针-1" class="headerlink" title="引用和指针"></a>引用和指针</h4><ul>
 <li>引用必须被初始化，但是不分配存储空间。指针不声明时初始化，在初始化的时候需要分配存储空间。</li>
 <li>引用初始化后不能被改变，指针可以改变所指的对象。</li>
 <li>不存在指向空值的引用，但是存在指向空值的指针</li>
@@ -1240,14 +1273,14 @@
       <i class="fa fa-chart-line"></i>
     </span>
       <span>站点总字数：</span>
-    <span title="站点总字数">12k</span>
+    <span title="站点总字数">18k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span>站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">11 分钟</span>
+    <span title="站点阅读时长">16 分钟</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/mist/" rel="noopener" target="_blank">NexT.Mist</a> 强力驱动
